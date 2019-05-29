@@ -44,8 +44,9 @@ class ViewController: UIViewController {
         let keyWindow = UIApplication.shared.keyWindow!
         let photoWall = PhotoWallView.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
         
+      
         photoWall.callBack = { [weak self] in
-
+            // 缩小动画
             let currentCell = photoWall.collectionView(photoWall.collectionView, cellForItemAt: IndexPath(item: photoWall.selectIndex, section: 0)) as! PhotoCell
             
             let bigImageView = UIImageView(image: currentCell.mainImage.image)
@@ -73,6 +74,7 @@ class ViewController: UIViewController {
         
         keyWindow.addSubview(tap.view!)
         
+        // 放大动画
         UIView.animate(withDuration: animationDuration, animations: {
 
             let height = Screen_Width * imageView.image!.size.height / imageView.image!.size.width
