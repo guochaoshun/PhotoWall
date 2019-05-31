@@ -70,8 +70,9 @@ class ViewController: UIViewController {
 
         UIView.animate(withDuration: animationDuration, animations: {
 
-            let height = Screen_Width * imageView.image!.size.height / imageView.image!.size.width
+            photoWall.backgroundColor = UIColor.black.withAlphaComponent(1)
             
+            let height = Screen_Width * imageView.image!.size.height / imageView.image!.size.width
             tap.view?.frame = CGRect(x: 0, y: 0, width: Screen_Width, height: height )
             tap.view?.center = keyWindow.center
             

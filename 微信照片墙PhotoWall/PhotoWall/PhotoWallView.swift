@@ -16,7 +16,7 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .black
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panAction(pan:)))
         self.addGestureRecognizer(pan)
