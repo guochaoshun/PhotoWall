@@ -42,21 +42,16 @@ class ViewController: UIViewController {
         
         // 用window加载
         let keyWindow = UIApplication.shared.keyWindow!
-        let photoWall = PhotoWallView.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+        let photoWall = PhotoWallView.init(frame: keyWindow.bounds)
         
       
         photoWall.callBack = { [weak self] in
             // 缩小动画
             let currentCell = photoWall.collectionView(photoWall.collectionView, cellForItemAt: IndexPath(item: photoWall.selectIndex, section: 0)) as! PhotoCell
             
-            let bigImageView = UIImageView(image: currentCell.mainImage.image)
-            bigImageView.contentMode = .scaleAspectFill
-            bigImageView.clipsToBounds = true
-            let height = Screen_Width * bigImageView.image!.size.height / bigImageView.image!.size.width
+            let bigImageView = photoWall.bigImageView
+            bigImageView.image = currentCell.mainImage.image
             
-            bigImageView.frame = CGRect(x: 0, y: 0, width: Screen_Width, height: height )
-            bigImageView.center = keyWindow.center
-            self?.view.addSubview(bigImageView)
             
             UIView.animate(withDuration: animationDuration, animations: {
 
@@ -64,8 +59,8 @@ class ViewController: UIViewController {
 
             }, completion: { (isF) in
 
-                bigImageView.removeFromSuperview()
-
+                photoWall.removeFromSuperview()
+                
             })
             
         }
