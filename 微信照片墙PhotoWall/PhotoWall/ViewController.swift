@@ -31,13 +31,12 @@ class ViewController: UIViewController {
     
     @IBAction func tapAction(_ tap: UITapGestureRecognizer) {
         
-        // 放大 : 先把这个view放到keyWindow上,然后改view的frame,动画完成后此view回到初始位置,显示PhotoWallView
-        // 缩小 : 隐藏PhotoWallView,生成一个一模一样的imageView,然后缩小这个imageView,
+        // 放大 : 先把这个imageView放到keyWindow上,然后改view的frame,动画完成后此view回到初始位置,显示PhotoWallView
+        // 缩小 : 隐藏PhotoWallView的collectionView,用一个一模一样的imageView,然后缩小这个imageView,最后移除PhotoWallView
   
         // 保存旧的frame
         let oldFrame = tap.view!.frame
         let imageView = tap.view as! UIImageView
-        imageView.contentMode = .scaleAspectFit
 
         
         // 用window加载
@@ -47,14 +46,11 @@ class ViewController: UIViewController {
       
         photoWall.callBack = { [weak self] in
             // 缩小动画
-            let currentCell = photoWall.collectionView(photoWall.collectionView, cellForItemAt: IndexPath(item: photoWall.selectIndex, section: 0)) as! PhotoCell
-            
             let bigImageView = photoWall.bigImageView
-            bigImageView.image = currentCell.mainImage.image
-            
             
             UIView.animate(withDuration: animationDuration, animations: {
 
+                photoWall.backgroundColor = UIColor.black.withAlphaComponent(0.1)
                 bigImageView.frame = self?.view.viewWithTag(100+photoWall.selectIndex)?.frame ?? oldFrame
 
             }, completion: { (isF) in
@@ -70,6 +66,8 @@ class ViewController: UIViewController {
         keyWindow.addSubview(tap.view!)
         
         // 放大动画
+        imageView.contentMode = .scaleAspectFit
+
         UIView.animate(withDuration: animationDuration, animations: {
 
             let height = Screen_Width * imageView.image!.size.height / imageView.image!.size.width

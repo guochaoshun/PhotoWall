@@ -47,9 +47,7 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
         }
     }
     
-    var callBack = {
-        print("结束了,执行动画")
-    }
+    var callBack = { print("结束了,执行动画") }
     
     
     
@@ -63,6 +61,7 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
         cell.callBack = { [weak self]  in
             self?.selectIndex = indexPath.item
             
+            // 调整bigImageView的大小和图片 , 然后调用回调 , 完成隐藏的动画
             let bigImageView = self!.bigImageView
             bigImageView.image = cell.mainImage.image
             let height = Screen_Width * bigImageView.image!.size.height / bigImageView.image!.size.width
@@ -77,12 +76,7 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
     func viewDisappear() {
         
         
-        bigImageView.image = UIImage(named: photoArray[selectIndex])
-        let height = Screen_Width * bigImageView.image!.size.height / bigImageView.image!.size.width
-        bigImageView.frame = CGRect(x: bigImageView.frame.origin.x, y: bigImageView.frame.origin.y, width: Screen_Width, height: height)
-        
         bigImageView.contentMode = .scaleAspectFill
-        self.backgroundColor = .clear
 
         collectionView.isHidden = true
         bigImageView.isHidden = false
@@ -154,8 +148,6 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
         
         let bgView = pan.view!
         let bigImageView = bgView.viewWithTag(100)! as! UIImageView
-        
-
         
         UIView.animate(withDuration: animationDuration*0.5, animations: {
             bgView.backgroundColor = .black

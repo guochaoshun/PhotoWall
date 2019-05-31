@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhotoWall/PhotoWallView.swift"
-            timestampString = "580985006.773813"
+            timestampString = "580986297.964866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "backToViewController(pan:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,61 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PhotoWall/PhotoWallView.swift"
-            timestampString = "580985006.774215"
+            timestampString = "580986297.965206"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "panAction(pan:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PhotoWall/ViewController.swift"
-            timestampString = "580985006.774606"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "tapAction(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in PhotoWall.ViewController.tapAction(__C.UITapGestureRecognizer) -&gt; ()"
-                  moduleName = "PhotoWall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lele/Desktop/GitHub/Swift%E7%85%A7%E7%89%87%E5%A2%99/%E5%BE%AE%E4%BF%A1%E7%85%A7%E7%89%87%E5%A2%99PhotoWall/PhotoWall/ViewController.swift"
-                  timestampString = "580983122.129097"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "951">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; () in PhotoWall.ViewController.tapAction(__C.UITapGestureRecognizer) -&gt; ()"
-                  moduleName = "PhotoWall"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lele/Desktop/GitHub/Swift%E7%85%A7%E7%89%87%E5%A2%99/%E5%BE%AE%E4%BF%A1%E7%85%A7%E7%89%87%E5%A2%99PhotoWall/PhotoWall/ViewController.swift"
-                  timestampString = "580983122.130985"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "207">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
