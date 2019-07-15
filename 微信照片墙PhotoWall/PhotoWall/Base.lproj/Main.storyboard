@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="6dC-97-nah">
-                                <rect key="frame" x="28" y="196" width="150" height="128"/>
+                                <rect key="frame" x="16" y="119" width="150" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -27,7 +27,7 @@
                                 </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" tag="101" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="Qcy-VZ-tM2">
-                                <rect key="frame" x="197" y="196" width="150" height="128"/>
+                                <rect key="frame" x="185" y="119" width="150" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -35,7 +35,7 @@
                                 </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" tag="102" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="YC6-kg-tRH">
-                                <rect key="frame" x="28" y="332" width="150" height="128"/>
+                                <rect key="frame" x="16" y="255" width="150" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -43,7 +43,7 @@
                                 </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" tag="103" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="lMr-Hr-QsI">
-                                <rect key="frame" x="197" y="332" width="150" height="128"/>
+                                <rect key="frame" x="185" y="255" width="150" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>

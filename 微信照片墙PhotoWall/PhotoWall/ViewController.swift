@@ -42,13 +42,23 @@ class ViewController: UIViewController {
         // 用window加载
         let keyWindow = UIApplication.shared.keyWindow!
         let photoWall = PhotoWallView.init(frame: keyWindow.bounds)
-        
+
+        photoWall.beginDraging = { [weak self] in
+            
+            let targetView = self?.view.viewWithTag(100+photoWall.selectIndex)
+            targetView?.isHidden = true
+        }
       
         photoWall.callBack = { [weak self] in
             // 缩小动画
             let bigImageView = photoWall.bigImageView
             
+            
+            let targetView = self?.view.viewWithTag(100+photoWall.selectIndex)
+            targetView?.isHidden = true
+
             UIView.animate(withDuration: animationDuration, animations: {
+
 
                 photoWall.backgroundColor = UIColor.black.withAlphaComponent(0.1)
                 bigImageView.frame = self?.view.viewWithTag(100+photoWall.selectIndex)?.frame ?? oldFrame
@@ -56,7 +66,7 @@ class ViewController: UIViewController {
             }, completion: { (isF) in
 
                 photoWall.removeFromSuperview()
-                
+                targetView?.isHidden = false
             })
             
         }

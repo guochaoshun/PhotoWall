@@ -48,7 +48,8 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
     }
     
     var callBack = { print("结束了,执行动画") }
-    
+    var beginDraging = { print("开始拖动了") }
+
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -68,12 +69,12 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
             bigImageView.frame = CGRect(x: 0, y: 0, width: Screen_Width, height: height)
             bigImageView.center = UIApplication.shared.keyWindow!.center
         
-            self?.viewDisappear()
+            self?.backToViewController()
         }
         return cell
     }
     
-    func viewDisappear() {
+    func backToViewController() {
         
         
         bigImageView.contentMode = .scaleAspectFill
@@ -102,6 +103,9 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
             bigImageView.frame = CGRect(x: 0, y: 0, width: Screen_Width, height: height)
             bigImageView.center = UIApplication.shared.keyWindow!.center
 
+            self.selectIndex = collectionView.indexPathsForVisibleItems.first!.item
+            self.beginDraging()
+            
         } else if pan.state == .changed {
             
             let point = pan.translation(in: UIApplication.shared.keyWindow)
@@ -118,13 +122,13 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
             bgView.backgroundColor = UIColor.black.withAlphaComponent(alpha)
             bigImageView.center = CGPoint(x: originalPoint.x+point.x, y: originalPoint.y+point.y)
             let size = 1 - abs(point.y)/Screen_Height
-            bigImageView.transform = CGAffineTransform(scaleX: max(size, 0.8), y: max(size, 0.8))
+            bigImageView.transform = CGAffineTransform(scaleX: max(size, 0.75), y: max(size, 0.75))
             
         } else if pan.state == .ended {
             print("拖动结束")
             
             if bigImageView.center.y > Screen_Height * 0.6 || bigImageView.center.y < Screen_Height * 0.4 {
-                backToViewController(pan: pan)
+                backToViewController()
             } else {
                 backToOriginal(pan: pan)
             }
@@ -137,13 +141,7 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
         }
         
     }
-    /// 结束动画 , 回到ViewController
-    func backToViewController(pan : UIPanGestureRecognizer)  {
-        
-        self.selectIndex = collectionView.indexPathsForVisibleItems.first!.item
-        viewDisappear()
 
-    }
     
     
     /// 回到初始位置
