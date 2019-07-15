@@ -106,21 +106,24 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
             
             let point = pan.translation(in: UIApplication.shared.keyWindow)
             
-            if point.y < 0 {
-                print("向上拖动 , 不处理 , 结束")
-                return
-            }
-            let alpha = 0.7-point.y/Screen_Height
+            // 注释掉向上拖动的判断,允许向上拖动的返回
+//            if point.y < 0 {
+//                print("向上拖动 , 不处理 , 结束")
+//                return
+//            }
+            
+            
+            let alpha = 0.7-abs(point.y)/Screen_Height
             print("透明度"+alpha.description)
             bgView.backgroundColor = UIColor.black.withAlphaComponent(alpha)
             bigImageView.center = CGPoint(x: originalPoint.x+point.x, y: originalPoint.y+point.y)
-            let size = 1 - point.y/Screen_Height
+            let size = 1 - abs(point.y)/Screen_Height
             bigImageView.transform = CGAffineTransform(scaleX: max(size, 0.8), y: max(size, 0.8))
             
         } else if pan.state == .ended {
             print("拖动结束")
             
-            if bigImageView.center.y > Screen_Height * 0.6 {
+            if bigImageView.center.y > Screen_Height * 0.6 || bigImageView.center.y < Screen_Height * 0.4 {
                 backToViewController(pan: pan)
             } else {
                 backToOriginal(pan: pan)
