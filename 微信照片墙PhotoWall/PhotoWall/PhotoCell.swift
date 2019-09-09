@@ -8,10 +8,15 @@
 
 import UIKit
 
-class PhotoCell: UICollectionViewCell,UIScrollViewDelegate {
+class PhotoCell: UICollectionViewCell,UIScrollViewDelegate
+{
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mainImage: UIImageView!
+    
+    @IBOutlet weak var mainImageTop: NSLayoutConstraint!
+    @IBOutlet weak var mainImageLeading: NSLayoutConstraint!
+    
     
     var callBack = {
         print("移除这个view")
@@ -51,5 +56,35 @@ class PhotoCell: UICollectionViewCell,UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mainImage
     }
+    
+    
+    /// 想在放大的时候去除掉上下的黑边,尝试了几次都失败了 
+    func resize()  {
+//        guard let imageWidth = mainImage.image?.size.width else {
+//            return
+//        }
+//        guard let imageHeiht = mainImage.image?.size.height else {
+//            return
+//        }
+//
+//        let screenScale = Screen_Width/Screen_Height
+//        let imageScale = imageWidth/imageHeiht
+//        if screenScale>imageScale {
+//
+//            let width = (Screen_Width-Screen_Height*imageScale)*0.5
+//            mainImage.frame = CGRect(x: width, y: 0, width: Screen_Height*imageScale, height: Screen_Height)
+//            mainImageTop.constant = 0
+//            mainImageLeading.constant = width
+//        } else {
+//
+//            let height = (Screen_Height-Screen_Width/imageScale)*0.5
+//            mainImage.frame = CGRect(x: 0, y: height, width: Screen_Width, height: Screen_Width/imageScale)
+//            mainImageTop.constant = height
+//            mainImageLeading.constant = 0
+//
+//        }
+    }
+    
+    
 
 }

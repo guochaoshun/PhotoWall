@@ -14,7 +14,8 @@ let Screen_Height = UIScreen.main.bounds.size.height
 let animationDuration = 0.5
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
 
     var dataArray = ["1","2","3","4"]
     
@@ -24,9 +25,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+//        aaa(num: <#T##Int#>)
+//        bbb(<#T##num: Int##Int#>)
 
-
+    }
+    func aaa( num : Int) -> Double {
+        return 3.14
+    }
+    func bbb(_ num : Int) -> Double {
+        return 3.14
     }
     
     @IBAction func tapAction(_ tap: UITapGestureRecognizer) {

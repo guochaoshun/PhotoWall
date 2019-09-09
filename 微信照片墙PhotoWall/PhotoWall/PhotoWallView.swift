@@ -59,6 +59,7 @@ class PhotoWallView: UIView,UICollectionViewDataSource,UICollectionViewDelegate 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         cell.mainImage.image = UIImage(named: photoArray[indexPath.item])
+        cell.resize()
         cell.callBack = { [weak self]  in
             self?.selectIndex = indexPath.item
             

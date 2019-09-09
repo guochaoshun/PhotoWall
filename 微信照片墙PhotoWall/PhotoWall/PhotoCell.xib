@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="461" height="575"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="Shy-me-idL">
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="Shy-me-idL">
                         <rect key="frame" x="0.0" y="0.0" width="461" height="575"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWJ-v6-lNR">
@@ -29,28 +29,30 @@
                             </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="fWJ-v6-lNR" firstAttribute="centerY" secondItem="Shy-me-idL" secondAttribute="centerY" id="DfB-K4-NJc"/>
                             <constraint firstItem="fWJ-v6-lNR" firstAttribute="top" secondItem="Shy-me-idL" secondAttribute="top" id="Hgl-Zr-epk"/>
-                            <constraint firstAttribute="trailing" secondItem="fWJ-v6-lNR" secondAttribute="trailing" id="MMz-ET-aYk"/>
-                            <constraint firstAttribute="bottom" secondItem="fWJ-v6-lNR" secondAttribute="bottom" id="NJ1-Lc-dI2"/>
+                            <constraint firstItem="fWJ-v6-lNR" firstAttribute="centerX" secondItem="Shy-me-idL" secondAttribute="centerX" id="Jao-eN-lxp"/>
+                            <constraint firstAttribute="trailing" secondItem="fWJ-v6-lNR" secondAttribute="trailing" priority="250" id="MMz-ET-aYk"/>
+                            <constraint firstAttribute="bottom" secondItem="fWJ-v6-lNR" secondAttribute="bottom" priority="250" id="NJ1-Lc-dI2"/>
                             <constraint firstItem="fWJ-v6-lNR" firstAttribute="leading" secondItem="Shy-me-idL" secondAttribute="leading" id="c0P-1Q-8B3"/>
                         </constraints>
                     </scrollView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="fWJ-v6-lNR" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="1XM-hZ-eon"/>
                 <constraint firstItem="Shy-me-idL" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="3ui-oi-ROO"/>
                 <constraint firstAttribute="bottom" secondItem="Shy-me-idL" secondAttribute="bottom" id="CzI-x9-zFg"/>
                 <constraint firstItem="Shy-me-idL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Dlj-Qc-pdK"/>
                 <constraint firstItem="Shy-me-idL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="S5E-cS-qpN"/>
                 <constraint firstAttribute="trailing" secondItem="Shy-me-idL" secondAttribute="trailing" id="pyQ-xe-Vc6"/>
-                <constraint firstItem="fWJ-v6-lNR" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="qeb-3N-iwS"/>
                 <constraint firstItem="Shy-me-idL" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="xJD-9Q-hdd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="461" height="575"/>
             <connections>
                 <outlet property="mainImage" destination="fWJ-v6-lNR" id="yk0-2k-bVn"/>
+                <outlet property="mainImageLeading" destination="c0P-1Q-8B3" id="avm-tD-kue"/>
+                <outlet property="mainImageTop" destination="Hgl-Zr-epk" id="acu-hy-0kM"/>
                 <outlet property="scrollView" destination="Shy-me-idL" id="i0m-ho-yUe"/>
             </connections>
             <point key="canvasLocation" x="-39" y="40"/>
